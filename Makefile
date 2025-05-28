@@ -11,3 +11,6 @@ lint:
 
 test-coverage:
 	npm test -- --coverage
+
+test-yaml:
+	npm test __tests__/genDiff.test.js

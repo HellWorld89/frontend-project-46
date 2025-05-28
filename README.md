@@ -6,4 +6,19 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HellWorld89_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HellWorld89_frontend-project-46)
 
 ### Asciinema с примером работы вычислителя отличий по пункту 4.
+## Пример работы
+
+Сравнение JSON файлов:
+
+```bash
+gendiff __fixtures__/file1.json __fixtures__/file2.json
 [![asciicast](https://asciinema.org/a/HUzTFrtTN1TmTTaEr6UgYswtI.svg)](https://asciinema.org/a/HUzTFrtTN1TmTTaEr6UgYswtI)
+
+### Asciinema с примером работы вычислителя отличий по пункту 4.
+## Пример работы
+
+Сравнение YAML файлов:
+
+```bash
+gendiff __fixtures__/file1.yml __fixtures__/file2.yml
+[![asciicast](https://asciinema.org/a/RRwYCcOdeUyboUyeKoc0I8ErX.svg)](https://asciinema.org/a/RRwYCcOdeUyboUyeKoc0I8ErX)

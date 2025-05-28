@@ -5,9 +5,18 @@ import genDiff from '../src/index.js';
 const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-test('compare flat JSON files', () => {
-  const file1 = getFixturePath('file1.json');
-  const file2 = getFixturePath('file2.json');
+describe('genDiff', () => {
   const expected = readFile('expected_result.txt');
-  expect(genDiff(file1, file2)).toBe(expected);
+
+  it('JSON comparison', () => {
+    const file1 = getFixturePath('file1.json');
+    const file2 = getFixturePath('file2.json');
+    expect(genDiff(file1, file2)).toEqual(expected);
+  });
+
+  it('YAML comparison', () => {
+    const file1 = getFixturePath('file1.yml');
+    const file2 = getFixturePath('file2.yml');
+    expect(genDiff(file1, file2)).toEqual(expected);
+  });
 });
