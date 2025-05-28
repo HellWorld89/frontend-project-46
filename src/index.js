@@ -18,7 +18,7 @@ const buildDiff = (data1, data2) => {
     if (data1[key] !== data2[key]) {
       return [
         `  - ${key}: ${data1[key]}`,
-        `  + ${key}: ${data2[key]}`
+        `  + ${key}: ${data2[key]}`,
       ].join('\n');
     }
     return `    ${key}: ${data1[key]}`;
