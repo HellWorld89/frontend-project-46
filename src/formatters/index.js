@@ -1,19 +1,19 @@
-import formatStylish from './stylish.js';
-import formatPlain from './plain.js';
-import formatJson from './json.js';
+import formatStylish from './stylish.js'
+import formatPlain from './plain.js'
+import formatJson from './json.js'
 
 const formatters = {
   stylish: formatStylish,
   plain: formatPlain,
-  json: formatJson,
-};
+  json: formatJson
+}
 
-export default (formatName) => {
-  const formatter = formatters[formatName];
+export default formatName => {
+  const formatter = formatters[formatName]
 
   if (!formatter) {
-    throw new Error(`Unsupported format: ${formatName}`);
+    throw new Error(`Unsupported format: ${formatName}`)
   }
 
-  return formatter;
-};
+  return formatter
+}
