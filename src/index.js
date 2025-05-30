@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import parse from './parsers.js';
 import buildDiff from './buildDiff.js';
-import formatStylish from './formatters/stylish.js';
+import getFormatter from './formatters/index.js';
 
 const getAbsolutePath = (filepath) => resolve(process.cwd(), filepath);
 
@@ -14,11 +14,7 @@ export default (filepath1, filepath2, formatName = 'stylish') => {
   const data2 = parse(filepath2, content2);
 
   const diff = buildDiff(data1, data2);
+  const format = getFormatter(formatName);
 
-  switch (formatName) {
-    case 'stylish':
-      return formatStylish(diff);
-    default:
-      throw new Error(`Unsupported format: ${formatName}`);
-  }
+  return format(diff);
 };
