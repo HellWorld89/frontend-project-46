@@ -3,8 +3,8 @@ import { readFileSync } from 'fs'
 import { resolve } from 'path'
 import genDiff from '../index.js'
 
-const getFixturePath = filename => resolve(__dirname, '..', '__fixtures__', filename)
-const readFile = filename => readFileSync(getFixturePath(filename), 'utf-8')
+const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', filename)
+const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8')
 
 describe('genDiff', () => {
   const expectedStylish = readFile('expected_stylish.txt')

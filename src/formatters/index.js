@@ -5,10 +5,10 @@ import formatJson from './json.js'
 const formatters = {
   stylish: formatStylish,
   plain: formatPlain,
-  json: formatJson
+  json: formatJson,
 }
 
-export default formatName => {
+export default (formatName) => {
   const formatter = formatters[formatName]
 
   if (!formatter) {

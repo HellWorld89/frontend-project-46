@@ -14,14 +14,14 @@ const stringify = (value, depth) => {
   return [
     '{',
     ...lines,
-    `${bracketIndent}}`
+    `${bracketIndent}}`,
   ].join('\n')
 }
 
 const formatStylish = (diff, depth = 1) => {
   const indent = ' '.repeat(depth * 4 - 2)
 
-  const lines = diff.map(node => {
+  const lines = diff.map((node) => {
     const { key, type } = node
 
     switch (type) {
@@ -29,7 +29,7 @@ const formatStylish = (diff, depth = 1) => {
         return [
           `${indent}  ${key}: {`,
           ...formatStylish(node.children, depth + 1).split('\n'),
-          `${indent}  }`
+          `${indent}  }`,
         ].join('\n')
 
       case 'added':
@@ -44,7 +44,7 @@ const formatStylish = (diff, depth = 1) => {
       case 'changed':
         return [
           `${indent}- ${key}: ${stringify(node.oldValue, depth + 1)}`,
-          `${indent}+ ${key}: ${stringify(node.newValue, depth + 1)}`
+          `${indent}+ ${key}: ${stringify(node.newValue, depth + 1)}`,
         ].join('\n')
 
       default:
@@ -55,4 +55,4 @@ const formatStylish = (diff, depth = 1) => {
   return lines.join('\n')
 }
 
-export default diff => `{\n${formatStylish(diff)}\n}`
+export default (diff) => `{\n${formatStylish(diff)}\n}`

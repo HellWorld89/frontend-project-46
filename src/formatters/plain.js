@@ -1,11 +1,11 @@
-const stringify = value => {
+const stringify = (value) => {
   if (value === null) return 'null'
   if (typeof value === 'object') return '[complex value]'
   return typeof value === 'string' ? `'${value}'` : String(value)
 }
 
 const formatPlain = (diff, path = '') => {
-  const lines = diff.flatMap(node => {
+  const lines = diff.flatMap((node) => {
     const currentPath = path ? `${path}.${node.key}` : node.key
 
     switch (node.type) {
