@@ -70,16 +70,21 @@ gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
 gendiff ./__fixtures__/file1.yml ./__fixtures__/file2.yml
 [![asciicast](https://asciinema.org/a/RRwYCcOdeUyboUyeKoc0I8ErX.svg)](https://asciinema.org/a/RRwYCcOdeUyboUyeKoc0I8ErX)
 
-**Аскинема для Рекурсивного сравнения.** \
+**Аскинема для stylish формата.** \
 gendiff ./__fixtures__/file1.yml ./__fixtures__/file2.yml \
 gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
 make test
 [![asciicast](https://asciinema.org/a/h9yjLjMXAJgH90GJwyqrNkhn2.svg)](https://asciinema.org/a/h9yjLjMXAJgH90GJwyqrNkhn2)
 
-**Аскинема для плоского формата.** \
+**Аскинема для plain формата.** \
 gendiff --format plain  ./__fixtures__/file1.json ./__fixtures__/file2.json
 gendiff --format plain  ./__fixtures__/file1.yml ./__fixtures__/file2.yml
 [![asciicast](https://asciinema.org/a/za4hUz8P9ISie4TLGPZVAgwmV.svg)](https://asciinema.org/a/za4hUz8P9ISie4TLGPZVAgwmV)
+
+**Аскинема для json формата.** \
+--format json  ./__fixtures__/file1.json ./__fixtures__/file2.json
+--format json  ./__fixtures__/file1.yml ./__fixtures__/file2.yml
+[![asciicast](https://asciinema.org/a/KCmdVQnXrlDi4uTgSghtZ1w1h.svg)](https://asciinema.org/a/KCmdVQnXrlDi4uTgSghtZ1w1h)
 
 ## Разработка
 **Установка зависимостей** \

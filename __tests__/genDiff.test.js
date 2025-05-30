@@ -9,6 +9,7 @@ const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 describe('genDiff', () => {
   const expectedStylish = readFile('expected_stylish.txt');
   const expectedPlain = readFile('expected_plain.txt');
+  const expectedJson = readFile('expected_json.txt');
 
   test('JSON comparison (stylish)', () => {
     const file1 = getFixturePath('file1.json');
@@ -32,5 +33,17 @@ describe('genDiff', () => {
     const file1 = getFixturePath('file1.yml');
     const file2 = getFixturePath('file2.yml');
     expect(genDiff(file1, file2, 'plain')).toBe(expectedPlain);
+  });
+
+    test('JSON comparison (json)', () => {
+    const file1 = getFixturePath('file1.json');
+    const file2 = getFixturePath('file2.json');
+    expect(genDiff(file1, file2, 'json')).toBe(expectedJson);
+  });
+
+  test('YAML comparison (json)', () => {
+    const file1 = getFixturePath('file1.yml');
+    const file2 = getFixturePath('file2.yml');
+    expect(genDiff(file1, file2, 'json')).toBe(expectedJson);
   });
 });
