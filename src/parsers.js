@@ -1,8 +1,8 @@
 import { extname } from 'path'
 import yaml from 'js-yaml'
 
-const parseJson = (content) => JSON.parse(content)
-const parseYaml = (content) => yaml.load(content)
+const parseJson = content => JSON.parse(content)
+const parseYaml = content => yaml.load(content)
 
 export default (filepath, content) => {
   const extension = extname(filepath).toLowerCase()

@@ -4,7 +4,7 @@ import parse from './src/parsers.js'
 import buildDiff from './src/buildDiff.js'
 import getFormatter from './src/formatters/index.js'
 
-const getAbsolutePath = (filepath) => resolve(process.cwd(), filepath)
+const getAbsolutePath = filepath => resolve(process.cwd(), filepath)
 
 export default (filepath1, filepath2, formatName = 'stylish') => {
   const content1 = readFileSync(getAbsolutePath(filepath1), 'utf-8')
