@@ -6,17 +6,17 @@ const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', fi
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 describe('genDiff', () => {
-  const expected = readFile('expected_result.txt');
+  const expectedStylish = readFile('expected_stylish.txt');
 
-  it('JSON comparison', () => {
+  test('JSON comparison', () => {
     const file1 = getFixturePath('file1.json');
     const file2 = getFixturePath('file2.json');
-    expect(genDiff(file1, file2)).toEqual(expected);
+    expect(genDiff(file1, file2)).toBe(expectedStylish);
   });
 
-  it('YAML comparison', () => {
+  test('YAML comparison', () => {
     const file1 = getFixturePath('file1.yml');
     const file2 = getFixturePath('file2.yml');
-    expect(genDiff(file1, file2)).toEqual(expected);
+    expect(genDiff(file1, file2)).toBe(expectedStylish);
   });
 });
