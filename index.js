@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import parse from './parsers.js';
-import buildDiff from './buildDiff.js';
-import getFormatter from './formatters/index.js';
+import parse from './src/parsers.js';
+import buildDiff from './src/buildDiff.js';
+import getFormatter from './src/formatters/index.js';
 
 const getAbsolutePath = (filepath) => resolve(process.cwd(), filepath);
 

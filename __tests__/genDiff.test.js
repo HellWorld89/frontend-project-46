@@ -1,7 +1,7 @@
 // __tests__/genDiff.test.js
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import genDiff from '../src/index.js';
+import genDiff from '../index.js';
 
 const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
@@ -35,7 +35,7 @@ describe('genDiff', () => {
     expect(genDiff(file1, file2, 'plain')).toBe(expectedPlain);
   });
 
-    test('JSON comparison (json)', () => {
+  test('JSON comparison (json)', () => {
     const file1 = getFixturePath('file1.json');
     const file2 = getFixturePath('file2.json');
     expect(genDiff(file1, file2, 'json')).toBe(expectedJson);
