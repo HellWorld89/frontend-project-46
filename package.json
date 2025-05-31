@@ -7,6 +7,10 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "exports": {
+    ".": "./src/index.js",
+    "./bin/gendiff.js": "./bin/gendiff.js"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
