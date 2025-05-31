@@ -1,7 +1,7 @@
 // __tests__/genDiff.test.js
 import { readFileSync } from 'fs'
 import { resolve } from 'path'
-import genDiff from '../index.js'
+import genDiff from '../src/index.js'
 
 const getFixturePath = filename => resolve(__dirname, '..', '__fixtures__', filename)
 const readFile = filename => readFileSync(getFixturePath(filename), 'utf-8')
